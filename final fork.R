@@ -1,3 +1,4 @@
 ibs<-read.csv("Untitled255555555555.csv")
-ibslogreg<-glm(ibs$IBSdepend~ibs$SexBinary, data=ibs)
+ibs_na_free<-na.omit(ibs)
+ibslogreg<-glm(ibs_na_free$IBSdepend~ibs_na_free$Cigarette, data=ibs_na_free)
 summary(ibslogreg)
