@@ -1,0 +1,6 @@
+install.packages("here")
+library(here)
+here()
+ibs<-read.csv("Untitled255555555555.csv")
+ibslogreg<-glm(ibs$IBSdepend~ibs$SexBinary, data=ibs)
+summary(ibslogreg)
